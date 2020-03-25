@@ -31,11 +31,17 @@ export default {
         show:{
             type:Boolean,
             default:() => false
+        },
+        msg:{
+            type:String,
+            default:() => 'yuluwugua'
         }
     },
     methods:{
        ok() {
             this.$emit('changed',false)
+            console.log('this.msg',this.msg)
+            this.$emit('get-msg',this.msg)
             this.$emit('on-ok')
        },
         cancel() {
